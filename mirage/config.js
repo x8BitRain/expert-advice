@@ -1,5 +1,5 @@
 import ENV from "ember-test-assignment/config/environment";
-import { Response } from 'miragejs';
+import {Response} from 'miragejs';
 
 export default function() {
   this.logging = true;
@@ -24,6 +24,24 @@ export default function() {
   });
 
   this.namespace = "/api/v1";
+
+  this.get("/questions");
+
+  this.get("/questions/:slug");
+
+  this.post('/questions');
+
+  this.del('/questions/:id');
+
+  this.patch('/questions/:slug');
+
+  this.post('/answers');
+
+  this.get('/answers');
+
+  this.get('/answers/:id');
+
+  this.del('/answers/:id');
 
   this.get("/users/me",  function(schema, request) {
     if (request.requestHeaders.Authorization) {

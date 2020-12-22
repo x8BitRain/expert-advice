@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fd0a409-ea2d-42e2-aeaf-6aad0a434c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mirage/factories/answer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mirage/factories/question.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mirage/factories/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mirage/fixtures/answers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mirage/fixtures/questions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mirage/fixtures/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mirage/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mirage/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mirage/scenarios/default.js" beforeDir="false" afterPath="$PROJECT_DIR$/mirage/scenarios/default.js" afterDir="false" />
     </list>
@@ -48,7 +42,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608656932757</updated>
-      <workItem from="1608656934874" duration="307000" />
+      <workItem from="1608656934874" duration="688000" />
     </task>
     <servers />
   </component>
