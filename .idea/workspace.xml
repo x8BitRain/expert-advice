@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fd0a409-ea2d-42e2-aeaf-6aad0a434c09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/mirage/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mirage/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mirage/scenarios/default.js" beforeDir="false" afterPath="$PROJECT_DIR$/mirage/scenarios/default.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/application.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/application.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +42,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608656932757</updated>
-      <workItem from="1608656934874" duration="688000" />
+      <workItem from="1608656934874" duration="1009000" />
     </task>
     <servers />
   </component>
