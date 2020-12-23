@@ -1,5 +1,5 @@
 import { module, test } from "qunit";
-import { currentURL, find} from "@ember/test-helpers";
+import { currentURL } from "@ember/test-helpers";
 import { setupApplicationTest } from "ember-qunit";
 import { setupMirage } from "ember-cli-mirage/test-support";
 import defaultScenario from "ember-test-assignment/mirage/scenarios/default";
@@ -15,19 +15,30 @@ module("Acceptance | QuestionPage", function(hooks) {
 
     await loginPage.manualLogin()
     await questionPage.clickQuestion()
-    const firstQuestionList = find(questionPage.selectors.answersList)
+    const firstQuestionList = document.querySelector(questionPage.selectors.answersList).childElementCount
     await questionPage.fillInAnswer("test");
     await questionPage.submitAnswer();
-    const secondQuestionList = find(questionPage.selectors.answersList)
-    assert.notEqual(firstQuestionList.children.length, secondQuestionList.children.length);
+    const secondQuestionList = document.querySelector(questionPage.selectors.answersList).childElementCount
+    assert.notEqual(firstQuestionList, secondQuestionList);
+    assert.ok(currentURL().match('/question'));
   });
 
-  // test("Asking a question without filling in the forms", async function(assert) {
-  //   defaultScenario(this.server)
-  //   await loginPage.manualLogin();
-  //   await askPage.visit();
-  //   await askPage.submit();
-  //   assert.dom(askPage.selectors.error).containsText("Please enter a title and description");
-  //   assert.ok(currentURL().match('/ask'));
-  // });
+  test("Should delete a question", async function(assert) {
+    defaultScenario(this.server)
+    await loginPage.manualLogin();
+    await questionPage.visitUserQuestion();
+    await questionPage.deletePost();
+    assert.ok(currentURL() === '/');
+  });
+
+  test("Should modify a question", async function(assert) {
+    defaultScenario(this.server)
+    await loginPage.manualLogin();
+    await questionPage.visitUserQuestion();
+    await questionPage.modifyQuestionTitle();
+    await questionPage.modifyQuestionDescription();
+    await questionPage.modifyQuestionTags();
+    await questionPage.modifyQuestionSubmit()
+    assert.ok(currentURL() === '/');
+  });
 });

@@ -16,9 +16,9 @@ module("Acceptance | indexPage", function(hooks) {
     defaultScenario(this.server)
 
     await loginPage.manualLogin()
-    const firstQuestion = document.querySelector(indexPage.selectors.questionItem).innerHTML
+    const firstQuestion = document.querySelector(indexPage.selectors.questionList).innerHTML
     await indexPage.clickTag()
-    const secondQuestion = document.querySelector(indexPage.selectors.questionItem).innerHTML
+    const secondQuestion = document.querySelector(indexPage.selectors.questionList).innerHTML
     /* If selecting one of many DOM elements will choose the first instance, if the first instance's HTML
        doesn't equal the second first instance's HTML it means the page has changed and sorted the questions.
      */

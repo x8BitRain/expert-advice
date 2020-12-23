@@ -5,6 +5,7 @@ const indexPage = {
 
   selectors: {
     questionItem: ".question--item",
+    questionList: ".question--list",
     tagDiv: ".index--tags > span:nth-child(1)",
     pageTwo: "ul.pagination > li:nth-child(3) > a",
   },

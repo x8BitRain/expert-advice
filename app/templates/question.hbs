@@ -24,9 +24,9 @@
     <hr>
     <h5>Update your Question</h5>
     <div class="form-group">
-      <Textarea class="form-control mb-2" placeholder="Title" @value={{this.editQuestionTitle}} style="width: 400px; height: 50px" />
-      <Textarea class="form-control mb-2" placeholder="Description" @value={{this.editQuestionDescription}} style="width: 400px; height: 50px" />
-      <Textarea class="form-control mb-2" placeholder="Tags (Separated by comma)" @value={{this.editQuestionTags}} style="width: 400px; height: 50px" />
+      <Textarea class="form-control mb-2 question-modify__title" placeholder="Title" @value={{this.editQuestionTitle}} style="width: 400px; height: 50px" />
+      <Textarea class="form-control mb-2 question-modify__description" placeholder="Description" @value={{this.editQuestionDescription}} style="width: 400px; height: 50px" />
+      <Textarea class="form-control mb-2 question-modify__tags" placeholder="Tags (Separated by comma)" @value={{this.editQuestionTags}} style="width: 400px; height: 50px" />
     </div>
 
     <button class="btn btn-info" {{on "click" (action this.updateQuestion model)}}>Update Question</button>
