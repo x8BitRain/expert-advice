@@ -16,9 +16,9 @@ export default class AskController extends Controller {
     this.store.createRecord('question', {
       title: this.questionTitle,
       description: this.questionDescription,
-      tags: this.questionTags.split(','),
+      tags: this.questionTags ? this.questionTags.split(',') : "",
       slug: slugify(this.questionTitle),
-      userId: userId ? userId : this.session.user.id,
+      userId: userId ? userId : this.session.user,
       createdAt: new Date(),
     })
       .save()

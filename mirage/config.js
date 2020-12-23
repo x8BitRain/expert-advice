@@ -25,11 +25,29 @@ export default function() {
 
   this.namespace = "/api/v1";
 
-  this.get("/questions");
+  this.get("/questions", function(schema) {
+    const allQuestions = schema.questions.all();
+    return allQuestions.sort((a, b) => {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    });
+  });
 
   this.get("/questions/:slug");
 
-  this.post('/questions');
+  this.post('/questions', function({questions}) {
+    let attrs = this.normalizedRequestAttrs();
+    if (attrs.description && attrs.title) {
+      return questions.create(attrs);
+    } else {
+      return new Response(422, {}, {
+        "errors": [
+          {
+            "source": { "pointer": "/data/attributes/firstname"},
+            "detail": "Please enter a title and description"
+          }
+        ]});
+    }
+  });
 
   this.del('/questions/:id');
 
