@@ -13,8 +13,8 @@
   {{#if this.session.user.id}}
     <div class="form-group">
       <h5>Add your answer</h5>
-      <Textarea class="form-control" placeholder="Enter an answer" @value={{this.answerDescription}} style="width: 400px; height: 50px" /><br>
-      <button class="btn btn-success" {{on "click" (action this.addAnswer)}}>Add Answer</button>
+      <Textarea class="form-control question-answer__form" placeholder="Enter an answer" @value={{this.answerDescription}} style="width: 400px; height: 50px" /><br>
+      <button class="btn btn-success question-answer__button" {{on "click" (action this.addAnswer)}}>Add Answer</button>
     </div>
   {{else}}
     <h5>Please log in to post an answer or edit post.</h5>
