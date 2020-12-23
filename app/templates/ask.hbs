@@ -8,7 +8,7 @@
     <Textarea class="form-control ask-form__tags" placeholder="Tags (Separated by comma)" @value={{this.questionTags}} style="width: 800px; height: 100px" /><br>
     <button class="btn btn-success ask-form__submit" {{on "click" (action this.addQuestion)}}>Add Question</button>
     {{#each this.requestErrors as |error|}}
-      <span id="ask-form__error" class="badge bg-danger text-white ml-3">{{error.detail}}</span>
+      <span class="badge bg-danger text-white ml-3 ask-form__error">{{error.detail}}</span>
     {{/each}}
   </div>
 </div>

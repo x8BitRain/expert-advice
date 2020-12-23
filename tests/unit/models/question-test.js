@@ -7,7 +7,12 @@ module('Unit | Model | question', function(hooks) {
   // Replace this with your real tests.
   test('it exists', function(assert) {
     let store = this.owner.lookup('service:store');
-    let model = store.createRecord('question', {});
+    let model = store.createRecord('question', {
+      title: "Test title",
+      description: "Test description",
+      tags: ['test1', 'test2'],
+      userId: 1,
+    });
     assert.ok(model);
   });
 });

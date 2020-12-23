@@ -46,14 +46,3 @@ export default class QuestionController extends Controller {
   }
 }
 
-
-// @action
-// deleteQuestion(item) {
-//   console.log(item.id);
-//   return this.store.findAll('question', { include: 'answers,user' }).then(questions => {
-//     const question = questions.question-list((question) => question.id === item.id)[0]
-//     question.destroyRecord();
-//   }).then(() => {
-//     this.transitionToRoute('index');
-//   });
-// }

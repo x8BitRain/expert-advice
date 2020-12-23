@@ -24,7 +24,15 @@ const loginPage = {
 
   submit() {
     return click(this.selectors.submitButton);
-  }
+  },
+
+  async manualLogin () {
+    await loginPage.visit();
+    await loginPage.fillInEmail("test@test.com");
+    await loginPage.fillInPassword("test");
+    await loginPage.submit();
+  },
+
 };
 
 export default loginPage;

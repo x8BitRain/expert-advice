@@ -16,19 +16,13 @@ export default class IndexController extends Controller {
   queryParams = ["page", "perPage", "currentTag"];
 
   @action
-  stringifyModel() {
-    const objects = this.model.map((model) => model.toJSON({ includeId: true }));
-    console.log(objects);
-  }
-
-  @action
   changeCurrentTag(tagName) {
     let model = this.model;
     if (tagName !== 'clear') {
-      let filteredModel = model.filter(link => link.tags.includes(tagName))
+      let filteredModel = model.filter(link => link.tags.includes(tagName));
       this.set('model', filteredModel);
     } else {
-      window.location.reload()
+      window.location.reload();
     }
   }
 
