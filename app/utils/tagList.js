@@ -1,1 +1,10 @@
-export default ["Science", "Technology", "Business", "Life", "Travel", "Reading", "Entertainment", "Politics"];
+export default [
+  'Science',
+  'Technology',
+  'Business',
+  'Life',
+  'Travel',
+  'Reading',
+  'Entertainment',
+  'Politics'
+];

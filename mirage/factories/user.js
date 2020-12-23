@@ -1,8 +1,7 @@
 import { Factory } from 'ember-cli-mirage';
-import faker from "faker"
+import faker from 'faker';
 
 export default Factory.extend({
-
   email() {
     return faker.internet.email();
   },
@@ -14,5 +13,4 @@ export default Factory.extend({
   afterCreate(user, server) {
     server.createList('question', 6, { user });
   }
-
 });

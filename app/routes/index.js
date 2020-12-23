@@ -1,5 +1,5 @@
-import Route from "@ember/routing/route";
-import { inject as service } from "@ember/service";
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
 export default class IndexRoute extends Route {
   @service session;
@@ -9,6 +9,6 @@ export default class IndexRoute extends Route {
   }
 
   model() {
-    return this.store.findAll("question", { include: 'answers,user' });
+    return this.store.findAll('question', { include: 'answers,user' });
   }
 }
