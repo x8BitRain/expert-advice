@@ -13,7 +13,6 @@ export default class IndexController extends Controller {
   @tracked perPage = 10;
   currentTag = "";
   tags = tags;
-  queryParams = ["page", "perPage", "currentTag"];
 
   @action
   changeCurrentTag(tagName) {

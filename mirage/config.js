@@ -28,7 +28,7 @@ export default function() {
   this.get("/questions", function(schema) {
     const allQuestions = schema.questions.all();
     return allQuestions.sort((a, b) => {
-      return new Date(b.createdAt) - new Date(a.createdAt);
+      return new Date(b.createdAt) - new Date(a.createdAt);   // Returns questions sorted by date, newest to oldest.
     });
   });
 
@@ -42,8 +42,8 @@ export default function() {
       return new Response(422, {}, {
         "errors": [
           {
-            "source": { "pointer": "/data/attributes/firstname"},
-            "detail": "Please enter a title and description"
+            "source": { "pointer": "/data/attributes/firstname"},   // Returns errors to be rendered in frontend if
+            "detail": "Please enter a title and description"        // there's missing fields on question creation.
           }
         ]});
     }

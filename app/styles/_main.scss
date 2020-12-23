@@ -3,3 +3,11 @@ main {
   max-width: 1200px;
   min-width: 320px;
 }
+
+.pagination {
+  width: 150px;
+  justify-content: space-evenly;
+  li {
+    font-size: 24px;
+  }
+}

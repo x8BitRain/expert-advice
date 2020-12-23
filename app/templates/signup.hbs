@@ -5,7 +5,6 @@
         <label for="exampleInputEmail1">Email</label>
         <Input @value={{@model.email}} @type="email" class="form-control" @id="exampleInputEmail1"
           @aria-describedby="emailHelp" placeholder="Enter email" />
-
         {{#if @model.errors.email}}
           <div class="text-danger">
             {{@model.errors.email.firstObject.message}}
@@ -19,7 +18,6 @@
       </div>
       <button type="submit" class="btn btn-primary" {{on "click" this.signup}}>Sign up</button>
       or <LinkTo @route="login">Log in</LinkTo>
-
     </form>
   </div>
 </div>

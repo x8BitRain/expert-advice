@@ -1,15 +1,14 @@
-
-  {{#each @questions as |question|}}
-    <Question
-      @title={{question.title}}
-      @slug={{question.slug}}
-      @description={{question.description}}
-      @tags={{question.tags}}
-      @createdAt={{question.createdAt}}
-      @answers={{question.answers}}
-      @user={{question.user.email}}
-      @isViewingQuestion={{false}}
-      @indexNo={{@index}}
-    />
-  {{/each}}
+{{#each @questions as |question|}}
+  <Question
+    @title={{question.title}}
+    @slug={{question.slug}}
+    @description={{question.description}}
+    @tags={{question.tags}}
+    @createdAt={{question.createdAt}}
+    @answers={{question.answers}}
+    @user={{question.user.email}}
+    @isViewingQuestion={{false}}
+    @indexNo={{@index}}
+  />
+{{/each}}
 
