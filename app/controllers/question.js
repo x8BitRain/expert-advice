@@ -11,7 +11,6 @@ export default class QuestionController extends Controller {
   @tracked editQuestionDescription;
   @tracked editQuestionTags;
 
-
   @action
   addAnswer() {
     let question = this.model;
@@ -29,7 +28,7 @@ export default class QuestionController extends Controller {
       const question = questions.filter((question) => question.slug === item.slug)[0]
       question.title = this.editQuestionTitle;
       question.description = this.editQuestionDescription;
-      question.tags = this.editQuestionTags;
+      question.tags = this.editQuestionTags.split(',');
       question.slug = slugify(this.editQuestionTitle);
       question.createdAt = new Date();
     }).then(() => {

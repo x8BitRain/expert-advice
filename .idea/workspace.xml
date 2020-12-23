@@ -5,24 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8fd0a409-ea2d-42e2-aeaf-6aad0a434c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/components/answer.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/question-list.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/question-list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/question.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/utils/stringToSlug.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/utils/tagList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/styles/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/styles/_main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/application.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/application.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/ask.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/ask.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/components/nav-bar.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/components/nav-bar.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/question-list.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/question-list.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/question.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/question.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/question.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/question.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mirage/scenarios/default.js" beforeDir="false" afterPath="$PROJECT_DIR$/mirage/scenarios/default.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +39,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -69,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608656932757</updated>
-      <workItem from="1608656934874" duration="10670000" />
+      <workItem from="1608656934874" duration="13658000" />
     </task>
     <servers />
   </component>
@@ -95,7 +86,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/controllers/index.js</url>
-          <line>23</line>
+          <line>29</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>

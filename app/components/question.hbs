@@ -7,27 +7,49 @@
     </LinkTo>
   {{/if}}
   <h3>{{@description}}</h3>
-  <h4 class="text-secondary">{{format-date @createdAt}}</h4>
-  <h6>By {{@user}}</h6>
 
-  <div class="d-flex">
+  {{#unless @isViewingQuestion}}
+  <div class="mb-2">
     {{#each @tags as |tag|}}
       <span class="badge bg-info mr-1 text-light">{{tag}}</span>
     {{/each}}
   </div>
+  {{/unless}}
+
+  <h4 class="text-secondary">{{format-date @createdAt}}</h4>
+
+  {{#if @user}}
+    <h6>By {{@user}}</h6>
+  {{/if}}
+
+
+  {{#if @isViewingQuestion}}
+    <div class="d-flex">
+      {{#each @tags as |tag|}}
+        <span class="badge bg-info mr-1 text-light">{{tag}}</span>
+      {{/each}}
+    </div>
+  {{/if}}
 
   {{#if @answers}}
     {{#if @isViewingQuestion}}
       <br>
       <h5 class="text-secondary">Answers</h5>
       <hr>
-      <br>
     {{else}}
-      <h5 class="text-secondary">No answers yet...</h5>
+      <div class="d-flex">
+        <LinkTo @route="question" @model={{@slug}}>
+          <h5 class="text-secondary">{{@answers.length}} answers</h5>
+        </LinkTo>
+      </div>
     {{/if}}
   {{else}}
     <br>
   {{/if}}
+
+  {{#if @isViewingQuestion}}
+  {{/if}}
+
 
   {{#if @isViewingQuestion}}
     <div id="question-answers">

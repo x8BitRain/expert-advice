@@ -7,5 +7,5 @@ export default class QuestionModel extends Model {
   @attr slug;
   @attr createdAt;
   @belongsTo user;
-  @hasMany({ async: true }) answers;
+  @hasMany answers;
 }

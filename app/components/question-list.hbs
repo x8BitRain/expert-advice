@@ -6,7 +6,9 @@
       @description={{question.description}}
       @tags={{question.tags}}
       @createdAt={{question.createdAt}}
-      @answers={{questions.answers}}
+      @answers={{question.answers}}
+      @user={{question.user.email}}
+      @isViewingQuestion={{false}}
     />
   {{/each}}
 

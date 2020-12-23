@@ -9,6 +9,6 @@ export default class IndexRoute extends Route {
   }
 
   model() {
-    return this.store.findAll("question");
+    return this.store.findAll("question", { include: 'answers,user' });
   }
 }
