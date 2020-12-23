@@ -39,17 +39,16 @@
     {{else}}
       <div class="d-flex">
         <LinkTo @route="question" @model={{@slug}}>
-          <h5 class="text-secondary">{{@answers.length}} answers</h5>
+          <h5 class="text-secondary">
+            {{@answers.length}}
+            answers
+          </h5>
         </LinkTo>
       </div>
     {{/if}}
   {{else}}
     <br>
   {{/if}}
-
-  {{#if @isViewingQuestion}}
-  {{/if}}
-
 
   {{#if @isViewingQuestion}}
     <div id="question-answers">
