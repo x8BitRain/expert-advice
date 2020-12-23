@@ -25,6 +25,6 @@ module("Acceptance | login", function(hooks) {
     await loginPage.fillInEmail("test@test.com");
     await loginPage.fillInPassword("test");
     await loginPage.submit();
-    assert.equal(currentURL(), "/");
+    assert.ok(currentURL().match('/'));
   });
 });

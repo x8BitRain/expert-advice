@@ -1,0 +1,42 @@
+<main>
+  <Question
+    @title={{model.title}}
+    @slug={{model.slug}}
+    @description={{model.description}}
+    @tags={{model.tags}}
+    @createdAt={{model.createdAt}}
+    @answers={{model.answers}}
+    @user={{model.user.email}}
+    @isViewingQuestion={{true}}
+  />
+
+  {{#if this.session.user.id}}
+    <div class="form-group">
+      <h5>Add your answer</h5>
+      <Textarea class="form-control question-answer__form" placeholder="Enter an answer" @value={{this.answerDescription}} style="width: 400px; height: 50px" /><br>
+      <button class="btn btn-success question-answer__button" {{on "click" (action this.addAnswer)}}>Add Answer</button>
+    </div>
+  {{else}}
+    <h5>Please log in to post an answer or edit post.</h5>
+  {{/if}}
+
+  {{#if (eq model.user.id this.session.user.id)}}
+    <hr>
+    <h5>Update your Question</h5>
+    <div class="form-group">
+      <Textarea class="form-control mb-2 question-modify__title" placeholder="Title" @value={{this.editQuestionTitle}} style="width: 400px; height: 50px" />
+      <Textarea class="form-control mb-2 question-modify__description" placeholder="Description" @value={{this.editQuestionDescription}} style="width: 400px; height: 50px" />
+      <Textarea class="form-control mb-2 question-modify__tags" placeholder="Tags (Separated by comma)" @value={{this.editQuestionTags}} style="width: 400px; height: 50px" />
+    </div>
+
+    <button class="btn btn-info" {{on "click" (action this.updateQuestion model)}}>Update Question</button>
+    <hr>
+    <h5>Remove your Question</h5>
+    <button class="btn btn-danger" {{ on "click" (action this.deleteQuestion model) }}>Delete</button>
+  {{/if}}
+  <br>
+  <br>
+
+</main>
+
+

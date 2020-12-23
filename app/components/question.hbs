@@ -1,0 +1,65 @@
+<div class="mb-5 question--item">
+  {{#if @isViewingQuestion}}
+    <h1>{{@title}}</h1>
+  {{else}}
+    <LinkTo @route="question" @model={{@slug}}>
+      <h2>{{@title}}</h2>
+    </LinkTo>
+  {{/if}}
+  <h3>{{@description}}</h3>
+
+  {{#unless @isViewingQuestion}}
+  <div class="mb-2">
+    {{#each @tags as |tag|}}
+      <span class="badge bg-info mr-1 text-light">{{tag}}</span>
+    {{/each}}
+  </div>
+  {{/unless}}
+
+  <h4 class="text-secondary">{{format-date @createdAt}}</h4>
+
+  {{#if @user}}
+    <h6>By {{@user}}</h6>
+  {{/if}}
+
+
+  {{#if @isViewingQuestion}}
+    <div class="d-flex">
+      {{#each @tags as |tag|}}
+        <span class="badge bg-info mr-1 text-light">{{tag}}</span>
+      {{/each}}
+    </div>
+  {{/if}}
+
+  {{#if @answers}}
+    {{#if @isViewingQuestion}}
+      <br>
+      <h5 class="text-secondary">Answers</h5>
+      <hr>
+    {{else}}
+      <div class="d-flex">
+        <LinkTo @route="question" @model={{@slug}}>
+          <h5 class="text-secondary">
+            {{@answers.length}}
+            answers
+          </h5>
+        </LinkTo>
+      </div>
+    {{/if}}
+  {{else}}
+    <br>
+  {{/if}}
+
+  {{#if @isViewingQuestion}}
+    <div id="question-answers">
+    {{#each @answers as |answer|}}
+      <Answer
+        @description={{answer.description}}
+        @createdAt={{answer.createdAt}}
+        @user={{answer.user.id}}
+      />
+    {{/each}}
+    </div>
+  {{/if}}
+
+</div>

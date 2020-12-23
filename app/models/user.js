@@ -1,6 +1,8 @@
-import Model, { attr } from '@ember-data/model';
+import Model, { attr, hasMany } from '@ember-data/model';
 
 export default class User extends Model {
-  @attr("string") email;
-  @attr("string") password;
+  @attr('string') email;
+  @attr('string') password;
+  @hasMany() questions;
+  @hasMany() answers;
 }
