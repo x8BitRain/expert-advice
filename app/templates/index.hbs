@@ -1,5 +1,26 @@
-{{#if this.session.user.email}}
-  <LinkTo @route="ask">
-    <button class="btn btn-success">Ask A Question</button>
-  </LinkTo>
-{{/if}}
+
+<main class='question-list'>
+  <div class="d-flex align-self-center mb-3">
+    {{#each tags as |tag|}}
+      <span {{on "click" (action this.changeCurrentTag tag )}} class="btn btn-info text-white mr-3">
+        {{tag}}
+      </span>
+    {{/each}}
+    <span {{on "click" (action this.changeCurrentTag 'clear')}} class="btn btn-info text-white mr-1">
+      Clear Tags
+    </span>
+  </div>
+  <div class="d-flex justify-content-between mb-5">
+    {{#if this.session.user.email}}
+      <LinkTo @route="ask">
+        <button class="btn btn-success">Ask A Question</button>
+      </LinkTo>
+    {{/if}}
+    <h4>Page {{page}}</h4>
+  </div>
+  <QuestionList @questions={{pagedContent}} />
+  <div class="d-flex justify-content-between">
+    <PageNumbers @content={{pagedContent}} />
+    <h4>Page {{page}}</h4>
+  </div>
+</main>

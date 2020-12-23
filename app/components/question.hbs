@@ -1,0 +1,43 @@
+<div class="mb-5">
+  {{#if @isViewingQuestion}}
+    <h1>{{@title}}</h1>
+  {{else}}
+    <LinkTo @route="question" @model={{@slug}}>
+      <h2>{{@title}}</h2>
+    </LinkTo>
+  {{/if}}
+  <h3>{{@description}}</h3>
+  <h4 class="text-secondary">{{format-date @createdAt}}</h4>
+  <h6>By {{@user}}</h6>
+
+  <div class="d-flex">
+    {{#each @tags as |tag|}}
+      <span class="badge bg-info mr-1 text-light">{{tag}}</span>
+    {{/each}}
+  </div>
+
+  {{#if @answers}}
+    {{#if @isViewingQuestion}}
+      <br>
+      <h5 class="text-secondary">Answers</h5>
+      <hr>
+      <br>
+    {{else}}
+      <h5 class="text-secondary">No answers yet...</h5>
+    {{/if}}
+  {{else}}
+    <br>
+  {{/if}}
+
+  {{#if @isViewingQuestion}}
+    <div id="question-answers">
+    {{#each @answers as |answer|}}
+      <Answer
+        @description={{answer.description}}
+        @createdAt={{answer.createdAt}}
+      />
+    {{/each}}
+    </div>
+  {{/if}}
+
+</div>

@@ -1,1 +1,37 @@
-{{outlet}}
+<main>
+  <Question
+    @title={{model.title}}
+    @slug={{model.slug}}
+    @description={{model.description}}
+    @tags={{model.tags}}
+    @createdAt={{model.createdAt}}
+    @answers={{model.answers}}
+    @user={{model.user.email}}
+    @isViewingQuestion={{true}}
+  />
+
+<div class="form-group">
+  <h5>Add your answer</h5>
+  <Textarea class="form-control" placeholder="Enter an answer" @value={{this.answerDescription}} style="width: 400px; height: 50px" /><br>
+  <button class="btn btn-success" {{on "click" (action this.addAnswer)}}>Add Answer</button>
+</div>
+  {{#if (eq model.user.id this.session.user.id)}}
+    <hr>
+    <h5>Update your Question</h5>
+    <div class="form-group">
+      <Textarea class="form-control" placeholder="Title" @value={{this.editQuestionTitle}} style="width: 400px; height: 50px" />
+      <Textarea class="form-control" placeholder="Description" @value={{this.editQuestionDescription}} style="width: 400px; height: 50px" />
+      <Textarea class="form-control" placeholder="Tags (Separated by comma)" @value={{this.editQuestionTags}} style="width: 400px; height: 50px" />
+    </div>
+
+    <button class="btn btn-info" {{on "click" (action this.updateQuestion model)}}>Update Question</button>
+    <hr>
+    <h5>Remove your Question</h5>
+    <button class="btn btn-danger" {{ on "click" (action this.deleteQuestion model) }}>delete</button>
+  {{/if}}
+  <br>
+  <br>
+
+</main>
+
+

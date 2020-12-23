@@ -1,1 +1,13 @@
-{{outlet}}
+<br>
+<div class="d-flex justify-content-center">
+  <div class="form-group">
+    <Textarea class="form-control ask-form__title" placeholder="Title" @value={{this.questionTitle}} style="width: 800px; height: 100px" /><br>
+    <Textarea class="form-control ask-form__description" placeholder="Description" @value={{this.questionDescription}} style="width: 800px; height: 100px" /><br>
+    <Textarea class="form-control ask-form__tags" placeholder="Tags (Separated by comma)" @value={{this.questionTags}} style="width: 800px; height: 100px" /><br>
+    <button class="btn btn-success ask-form__submit" {{on "click" (action this.addQuestion)}}>Add Question</button>
+    {{#each this.requestErrors as |error|}}
+      <span id="ask-form__error" class="badge bg-danger text-white ml-3">{{error.detail}}</span>
+    {{/each}}
+  </div>
+</div>
+

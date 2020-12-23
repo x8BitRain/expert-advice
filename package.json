@@ -60,5 +60,9 @@
   },
   "engines": {
     "node": "12.x"
+  },
+  "dependencies": {
+    "ember-cli-pagination": "^3.1.5",
+    "faker": "^5.1.0"
   }
 }
